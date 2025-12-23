@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NDVI API Test</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .button { padding: 10px 20px; background: #1e40af; color: white; border: none; cursor: pointer; margin: 10px 0; }
+        .result { background: #f0f0f0; padding: 15px; margin: 20px 0; border-radius: 5px; }
+        pre { background: #f0f0f0; padding: 10px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>🌍 NDVI Backend Test</h1>
+    
+    <button class="button" onclick="testAPI()">Test API Health</button>
+    <button class="button" onclick="fetchData(2023)">Fetch 2023 Data</button>
+    <button class="button" onclick="fetchData(2015)">Fetch 2015 Data</button>
+    
+    <div id="result" class="result" style="display:none;">
+        <h3>Result:</h3>
+        <pre id="output"></pre>
+    </div>
+
+    <script>
+        async function testAPI() {
+            try {
+                const res = await fetch('http://localhost:5000/api/health');
+                const data = await res.json();
+                showResult('✅ API Health:\n' + JSON.stringify(data, null, 2));
+            } catch(e) {
+                showResult('❌ Error:\n' + e.message);
+            }
+        }
+
+        async function fetchData(year) {
+            try {
+                const res = await fetch(`http://localhost:5000/api/ndvi?year=${year}&district=Thanjavur`);
+                const data = await res.json();
+                showResult(`✅ NDVI Data (${year}):\n` + JSON.stringify(data, null, 2));
+            } catch(e) {
+                showResult('❌ Error:\n' + e.message);
+            }
+        }
+
+        function showResult(text) {
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('output').textContent = text;
+        }
+    </script>
+</body>
+</html>

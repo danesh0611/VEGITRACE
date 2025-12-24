@@ -124,6 +124,12 @@ const NDVI_DATA = {
       context: 'Agricultural landscape with seasonal variations and moderate vegetation coverage.',
       status: 'moderate'
     },
+    2015: {
+      mean: 0.471,
+      interpretation: 'High vegetation with strong agricultural presence.',
+      context: 'Good vegetation coverage indicating healthy agricultural conditions.',
+      status: 'good'
+    },
     2020:{
       mean: 0.373,
       interpretation: 'Moderate vegetation dominated by seasonal agriculture.',
@@ -144,7 +150,12 @@ const NDVI_DATA = {
       context: 'Agricultural landscape with seasonal variations and moderate vegetation coverage.',
       status: 'moderate'
     },
-
+    2015: {
+      mean: 0.469,
+      interpretation: 'High vegetation with strong agricultural presence.',
+      context: 'Good vegetation coverage indicating healthy agricultural conditions.',
+      status: 'good'
+    },
     2020:{
       mean: 0.376,
       interpretation: 'Moderate vegetation dominated by seasonal agriculture.',
@@ -165,8 +176,14 @@ const NDVI_DATA = {
       context: 'Agricultural landscape with seasonal variations and moderate vegetation coverage.',
       status: 'moderate'
     },
+    2015:{
+      mean: 0.459,
+      interpretation: 'High vegetation with strong agricultural presence.',
+      context: 'Good vegetation coverage indicating healthy agricultural conditions.',
+      status: 'good'
+    },
     2020:{
-      meam: 0.379,
+      mean: 0.379,
       interpretation: 'Moderate vegetation dominated by seasonal agriculture.',
       context: 'Agricultural landscape with seasonal variations and moderate vegetation coverage.',
       status: 'moderate'
@@ -215,13 +232,15 @@ const MAP_URLS = {
   },
   'Tiruchirapalli': {
     2010: 'https://valued-module-445514-k1.projects.earthengine.app/view/tiruchirapalli2010',
+    2015: 'https://valued-module-445514-k1.projects.earthengine.app/view/tiruchirapalli2015',
     2020: 'https://mssrf-481604.projects.earthengine.app/view/tiruchirappalli2020',
     2025: 'https://mssrf-481604.projects.earthengine.app/view/tiruchirappalli2025'
   },
   'Pudhukottai': {
     2010: 'https://valued-module-445514-k1.projects.earthengine.app/view/pudhukottai2010',
+    2015: 'https://valued-module-445514-k1.projects.earthengine.app/view/pudhukottai2015',
     2020: 'https://mssrf-481604.projects.earthengine.app/view/pudhukkottai2020',
-    2025: 'https://mssrf-481604.projects.earthengine.app/view/pudhukkottai2025'
+    2025: 'https://mssrf-481604.projects.earthengine.app/view/pudukkottai2025'
   }
 };
 

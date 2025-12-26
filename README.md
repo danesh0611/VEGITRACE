@@ -1,6 +1,4 @@
-# 🌍 Thanjavur NDVI Analysis Platform
 
-> **AI-Powered Agricultural Health Monitoring Using Satellite Imagery**
 
 A sophisticated web application that dynamically fetches NDVI (Normalized Difference Vegetation Index) maps for Thanjavur District and auto-generates AI-based agricultural interpretation reports.
 
@@ -14,7 +12,7 @@ This is a **real-world geo-AI web application** combining:
 - 🤖 **AI-Driven Agricultural Intelligence** (Rule-based NLP)
 - ⚛️ **Modern React Frontend** (Vite + React 19)
 
-**Perfect for:** Resume, Hackathons, Internships, Viva Presentations
+
 
 ---
 

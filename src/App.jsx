@@ -201,46 +201,45 @@ const NDVI_DATA = {
 const MAP_URLS = {
   'Thanjavur': {
     2010: 'https://valued-module-445514-k1.projects.earthengine.app/view/thanjavur2010',
-    2025: 'https://mssrf-481604.projects.earthengine.app/view/thanjavur2025',
+    2025: 'https://valued-module-445514-k1.projects.earthengine.app/view/thanjavur2025',
     2015: 'https://valued-module-445514-k1.projects.earthengine.app/view/thanjavur2015',
-    2020: 'https://mssrf-481604.projects.earthengine.app/view/thanjavur2020'
+    2020: 'https://valued-module-445514-k1.projects.earthengine.app/view/thanjavur2020'
   },
   'Ariyalur': {
     2010: 'https://valued-module-445514-k1.projects.earthengine.app/view/ariyalur2010',
     2015: 'https://valued-module-445514-k1.projects.earthengine.app/view/ariyalur2015',
-    2020: 'https://mssrf-481604.projects.earthengine.app/view/ariyalur2020',
-    2025: 'https://mssrf-481604.projects.earthengine.app/view/ariyalur2025'
+    2020: 'https://valued-module-445514-k1.projects.earthengine.app/view/ariyalur2020',
+    2025: 'https://valued-module-445514-k1.projects.earthengine.app/view/ariyalur2025'
   },
   'Cuddalore': {
     2010: 'https://valued-module-445514-k1.projects.earthengine.app/view/cuddalore2010',
     2015: 'https://valued-module-445514-k1.projects.earthengine.app/view/cuddalore2015',
-    2020: 'https://mssrf-481604.projects.earthengine.app/view/cuddalore2020',
-    2025: 'https://mssrf-481604.projects.earthengine.app/view/cuddalore2025'
+    2020: 'https://valued-module-445514-k1.projects.earthengine.app/view/cuddalore2020',
+    2025: 'https://valued-module-445514-k1.projects.earthengine.app/view/cuddalore2025'
   },
   'Nagapattinam': {
     2010: 'https://valued-module-445514-k1.projects.earthengine.app/view/nagapattinam2010',
-    2020: 'https://mssrf-481604.projects.earthengine.app/view/nagapattinam2020',
+    2020: 'https://valued-module-445514-k1.projects.earthengine.app/view/nagapattinam2020',
     2015: 'https://valued-module-445514-k1.projects.earthengine.app/view/nagapattinam2015',
-    2025: 'https://mssrf-481604.projects.earthengine.app/view/nagapattinam2025'
+    2025: 'https://valued-module-445514-k1.projects.earthengine.app/view/nagapattinam2025'
   },
   'Perambalur': {
     2010: 'https://valued-module-445514-k1.projects.earthengine.app/view/perambalur2010',
     2015: 'https://valued-module-445514-k1.projects.earthengine.app/view/perambalur2015',
-    2020: 'https://mssrf-481604.projects.earthengine.app/view/perambalur2020',
-    
-    2025: 'https://mssrf-481604.projects.earthengine.app/view/perambalur2025'
+    2020: 'https://valued-module-445514-k1.projects.earthengine.app/view/perambalur2020',
+    2025: 'https://valued-module-445514-k1.projects.earthengine.app/view/perambalur2025'
   },
   'Tiruchirapalli': {
     2010: 'https://valued-module-445514-k1.projects.earthengine.app/view/tiruchirapalli2010',
     2015: 'https://valued-module-445514-k1.projects.earthengine.app/view/tiruchirapalli2015',
-    2020: 'https://mssrf-481604.projects.earthengine.app/view/tiruchirappalli2020',
-    2025: 'https://mssrf-481604.projects.earthengine.app/view/tiruchirappalli2025'
+    2020: 'https://valued-module-445514-k1.projects.earthengine.app/view/tiruchirapalli2020',
+    2025: 'https://valued-module-445514-k1.projects.earthengine.app/view/tiruchirapalli2025'
   },
   'Pudhukottai': {
     2010: 'https://valued-module-445514-k1.projects.earthengine.app/view/pudhukottai2010',
     2015: 'https://valued-module-445514-k1.projects.earthengine.app/view/pudhukottai2015',
-    2020: 'https://mssrf-481604.projects.earthengine.app/view/pudhukkottai2020',
-    2025: 'https://mssrf-481604.projects.earthengine.app/view/pudukkottai2025'
+    2020: 'https://valued-module-445514-k1.projects.earthengine.app/view/pudhukottai2020',
+    2025: 'https://valued-module-445514-k1.projects.earthengine.app/view/pudhukottai2025'
   }
 };
 
@@ -341,11 +340,39 @@ function App() {
         <div className="instruction-banner">
           <h3>📍 Map Layers Guide:</h3>
           <ul className="instruction-list">
-            <li><strong>Median NDVI</strong> – Select this layer to visualize the median vegetation condition of the district.</li>
+            <li><strong>Random Forest Classification</strong> – Enable this layer to view the results of the random forest machine learning classification on the map.</li>
             <li><strong>Vegetation Classification</strong> – Enable this layer to view different vegetation and land cover classes.</li>
             <li><strong>Boundary</strong> – Turn on this layer to display the district boundary on the map.</li>
           </ul>
         </div>
+
+        <div className="legend-guide-banner">
+          <h3>🤖 ML Classification Legend</h3>
+          <div className="legend-grid">
+            <div className="legend-item">
+              <span className="legend-color" style={{backgroundColor: '#DC143C'}}></span>
+              <div className="legend-text">
+                <strong>Dry Areas</strong>
+                <p>Arid zones, barren land</p>
+              </div>
+            </div>
+            <div className="legend-item">
+              <span className="legend-color" style={{backgroundColor: '#FFD700'}}></span>
+              <div className="legend-text">
+                <strong>Agriculture Land</strong>
+                <p>Cultivated fields, farmland</p>
+              </div>
+            </div>
+            <div className="legend-item">
+              <span className="legend-color" style={{backgroundColor: '#228B22'}}></span>
+              <div className="legend-text">
+                <strong>Permanent Vegetation</strong>
+                <p>Forests, trees, vegetation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="layout-container">
           <div className="left-panel">
             <div className="controls-section">
@@ -442,6 +469,35 @@ function App() {
                       <span className="scale-label">No Vegetation (&lt; 0.30)</span>
                     </div>
                   </div>
+
+                  {ndviData.classification && (
+                    <div className="classification-breakdown">
+                      <h4>🤖 ML Classification Breakdown</h4>
+                      <div className="classification-items">
+                        <div className="class-bar">
+                          <div className="class-label">
+                            <span className="class-color" style={{backgroundColor: '#228B22'}}></span>
+                            <span>Permanent Vegetation</span>
+                          </div>
+                          <div className="class-percentage">{ndviData.classification.vegetation.toFixed(2)}%</div>
+                        </div>
+                        <div className="class-bar">
+                          <div className="class-label">
+                            <span className="class-color" style={{backgroundColor: '#FFD700'}}></span>
+                            <span>Agriculture Land</span>
+                          </div>
+                          <div className="class-percentage">{ndviData.classification.agriculture.toFixed(2)}%</div>
+                        </div>
+                        <div className="class-bar">
+                          <div className="class-label">
+                            <span className="class-color" style={{backgroundColor: '#DC143C'}}></span>
+                            <span>Dry Areas</span>
+                          </div>
+                          <div className="class-percentage">{ndviData.classification.dry.toFixed(2)}%</div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
 
